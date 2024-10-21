@@ -70,6 +70,7 @@ main {
     padding: 2rem 5%;
     background: linear-gradient(135deg, #001F3F 0%, #0A4B78 100%);
     overflow: hidden;
+    position: relative;
 }
 
 .hero-content {
@@ -78,24 +79,28 @@ main {
 }
 
 .hero-image-container {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    transform: translateY(-50%);
     width: 50%;
-    height: 100%;
-    overflow: hidden;
+    max-width: 600px;
 }
 
 .hero-image {
-    position: absolute;
-    top: 50%;
-    right: -15%;
-    transform: translateY(-50%) perspective(1000px) rotateY(-15deg);
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    transition: transform 0.3s ease;
 }
 
-.hero-image:hover {
-    transform: translateY(-50%) perspective(1000px) rotateY(0deg);
+.hero-title {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    z-index: 3;
 }
 
 h1 {
@@ -108,51 +113,6 @@ h1 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 300;
-}
-
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        padding: 4rem 5% 2rem;
-    }
-
-    .hero-content, .hero-image-container {
-        max-width: 100%;
-        width: 100%;
-    }
-
-    .hero-image-container {
-        height: 50vh;
-        margin-top: 2rem;
-    }
-
-    .hero-image {
-        right: 0;
-        transform: translateY(-50%);
-    }
-
-    .hero-image:hover {
-        transform: translateY(-50%);
-    }
-
-    h1 {
-        font-size: 3rem;
-    }
-    
-    .subtitle {
-        font-size: 1.2rem;
-    }
-}
-@media (max-width: 768px) {
-    h1 {
-        font-size: 3.5rem;
-    }
-    
-    .subtitle {
-        font-size: 1.4rem;
-    }
 }
 
 section {
@@ -168,7 +128,7 @@ h2 {
     font-weight: 700;
 }
 
-.about p {
+.about p, .privacy p {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
@@ -194,8 +154,6 @@ h2 {
 .feature-item p {
     font-weight: 300;
     font-size: 0.9rem;
-    height: 2.7em;
-    overflow: hidden;
 }
 
 .contact {
@@ -241,17 +199,19 @@ footer {
     }
 
     .hero-image-container {
-        height: 50vh;
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
         margin-top: 2rem;
     }
 
-    .hero-image {
-        right: 0;
-        transform: translateY(-50%);
-    }
-
-    .hero-image:hover {
-        transform: translateY(-50%);
+    .hero-title {
+        position: relative;
+        top: auto;
+        left: auto;
+        font-size: 4rem;
+        margin-bottom: 1rem;
     }
 
     .feature-grid {
@@ -264,9 +224,5 @@ footer {
     
     .subtitle {
         font-size: 1.2rem;
-    }
-
-    .feature-item p {
-        height: auto;
     }
 }

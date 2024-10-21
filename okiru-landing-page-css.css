@@ -1,31 +1,40 @@
+:root {
+    --deep-blue: #001F3F;
+    --light-blue: #7FDBFF;
+    --white: #FFFFFF;
+}
+
 body {
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--white);
     margin: 0;
     padding: 0;
+    background-color: var(--deep-blue);
 }
 
 header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    padding: 1rem 0;
+    background-color: rgba(0, 31, 63, 0.9);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #6e8efb;
+    color: var(--light-blue);
 }
 
 nav ul {
@@ -39,8 +48,13 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    color: var(--white);
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--light-blue);
 }
 
 main {
@@ -48,30 +62,62 @@ main {
 }
 
 .hero {
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
-    color: white;
-    padding: 5rem 10%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    background-image: url('phone-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 31, 63, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
 .subtitle {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    font-weight: 300;
 }
 
-.features, .howto, .contact {
-    padding: 5rem 10%;
+section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 h2 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.about p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 300;
 }
 
 .feature-grid {
@@ -84,80 +130,54 @@ h2 {
     text-align: center;
 }
 
-.feature-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.howto {
-    background-color: #f8f9fa;
-}
-
-.howto-steps {
-    display: flex;
-    justify-content: space-around;
-}
-
-.step {
-    text-align: center;
-    max-width: 200px;
-}
-
-.step-number {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background-color: #6e8efb;
-    color: white;
-    border-radius: 50%;
-    line-height: 40px;
+.feature-item h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: var(--light-blue);
+}
+
+.feature-item p {
+    font-weight: 300;
 }
 
 .contact {
     text-align: center;
-    background-color: #f8f9fa;
-}
-
-.contact p {
-    margin-bottom: 2rem;
 }
 
 .contact-button {
     display: inline-block;
-    background-color: #6e8efb;
-    color: white;
+    background-color: var(--light-blue);
+    color: var(--deep-blue);
     text-decoration: none;
     padding: 1rem 2rem;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .contact-button:hover {
-    background-color: #5a7de9;
+    background-color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    background-color: #333;
-    color: white;
     text-align: center;
     padding: 1rem 0;
+    background-color: rgba(0, 31, 63, 0.9);
+    font-weight: 300;
 }
 
 @media (max-width: 768px) {
-    .feature-grid, .howto-steps {
+    .feature-grid {
         grid-template-columns: 1fr;
     }
     
-    .howto-steps {
-        flex-direction: column;
-        align-items: center;
+    h1 {
+        font-size: 3rem;
     }
     
-    .step {
-        margin-bottom: 2rem;
+    .subtitle {
+        font-size: 1.2rem;
     }
 }

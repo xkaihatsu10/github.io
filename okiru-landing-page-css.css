@@ -1,144 +1,163 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.6;
     color: #333;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #4facfe 0%, #00f2fe 100%);
-    min-height: 100vh;
 }
 
 header {
-    text-align: center;
-    padding: 2rem 0;
-    color: white;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6e8efb;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
 }
 
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+    margin-top: 60px;
 }
 
 .hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 4rem;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    padding: 5rem 10%;
+    text-align: center;
 }
 
-.app-screenshot {
-    width: 45%;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.hero-content {
-    width: 50%;
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.features, .howto, .contact {
+    padding: 5rem 10%;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.feature-item {
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 3rem;
     margin-bottom: 1rem;
-    color: white;
+    display: block;
 }
 
-.cta-button, .submit-button {
+.howto {
+    background-color: #f8f9fa;
+}
+
+.howto-steps {
+    display: flex;
+    justify-content: space-around;
+}
+
+.step {
+    text-align: center;
+    max-width: 200px;
+}
+
+.step-number {
     display: inline-block;
-    background-color: #FF6B6B;
+    width: 40px;
+    height: 40px;
+    background-color: #6e8efb;
     color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    border: none;
-    cursor: pointer;
+    border-radius: 50%;
+    line-height: 40px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.cta-button:hover, .submit-button:hover {
-    background-color: #FF8787;
+.contact {
+    text-align: center;
+    background-color: #f8f9fa;
 }
 
-.features, .contact {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.contact p {
     margin-bottom: 2rem;
 }
 
-.features ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.features li {
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.features li::before {
-    content: '✓';
-    color: #4facfe;
-    position: absolute;
-    left: 0;
-}
-
-.contact h2 {
-    color: #333;
-}
-
-.contact-form {
-    display: grid;
-    gap: 1rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 0.5rem;
-    color: #555;
-}
-
-input, textarea {
-    padding: 0.5rem;
-    border: 1px solid #ddd;
+.contact-button {
+    display: inline-block;
+    background-color: #6e8efb;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
     border-radius: 5px;
-    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-textarea {
-    min-height: 100px;
-    resize: vertical;
+.contact-button:hover {
+    background-color: #5a7de9;
 }
 
 footer {
+    background-color: #333;
+    color: white;
     text-align: center;
     padding: 1rem 0;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
-    .hero {
+    .feature-grid, .howto-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .howto-steps {
         flex-direction: column;
+        align-items: center;
     }
     
-    .app-screenshot, .hero-content {
-        width: 100%;
-    }
-    
-    .app-screenshot {
+    .step {
         margin-bottom: 2rem;
     }
 }

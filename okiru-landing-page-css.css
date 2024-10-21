@@ -1,6 +1,7 @@
 :root {
     --deep-blue: #001F3F;
     --light-blue: #7FDBFF;
+    --accent-color: #FF4136;
     --white: #FFFFFF;
 }
 
@@ -65,27 +66,26 @@ main {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-image: url('phone-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 31, 63, 0.7);
+    justify-content: space-between;
+    padding: 0 5%;
+    background: linear-gradient(135deg, #001F3F 0%, #0A4B78 100%);
+    overflow: hidden;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
+    max-width: 50%;
+}
+
+.hero-image {
+    max-width: 45%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: perspective(1000px) rotateY(-15deg);
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: perspective(1000px) rotateY(0deg);
 }
 
 h1 {
@@ -124,6 +124,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .feature-item {
@@ -140,14 +141,22 @@ h2 {
     font-weight: 300;
 }
 
+.feature-image {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
 .contact {
     text-align: center;
 }
 
 .contact-button {
     display: inline-block;
-    background-color: var(--light-blue);
-    color: var(--deep-blue);
+    background-color: var(--accent-color);
+    color: var(--white);
     text-decoration: none;
     padding: 1rem 2rem;
     border-radius: 5px;
@@ -156,7 +165,8 @@ h2 {
 }
 
 .contact-button:hover {
-    background-color: var(--white);
+    background-color: var(--light-blue);
+    color: var(--deep-blue);
     transform: translateY(-3px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -169,6 +179,22 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem 5%;
+    }
+
+    .hero-content, .hero-image {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        margin-top: 2rem;
+        transform: none;
+    }
+
     .feature-grid {
         grid-template-columns: 1fr;
     }

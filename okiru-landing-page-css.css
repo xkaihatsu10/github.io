@@ -133,12 +133,15 @@ h2 {
 
 .feature-item h3 {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: var(--light-blue);
 }
 
 .feature-item p {
     font-weight: 300;
+    font-size: 0.9rem;
+    height: 2.7em;
+    overflow: hidden;
 }
 
 .feature-image {
@@ -205,5 +208,9 @@ footer {
     
     .subtitle {
         font-size: 1.2rem;
+    }
+
+    .feature-item p {
+        height: auto;
     }
 }

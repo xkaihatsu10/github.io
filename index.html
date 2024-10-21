@@ -5,33 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OKIRU - 30秒で脳を目覚めさせるアプリ</title>
     <link rel="stylesheet" href="okiru-landing-page-css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>OKIRU</h1>
-        <p>30秒で脳を目覚めさせるアプリ</p>
+        <nav>
+            <img src="okiru-logo.png" alt="OKIRU Logo" class="logo">
+            <ul>
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#features">特徴</a></li>
+                <li><a href="#howto">遊び方</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <img src="okiru-app-screenshot.jpg" alt="OKIRUアプリのスクリーンショット" class="app-screenshot">
+        <section id="home" class="hero">
             <div class="hero-content">
-                <h2>素早く脳を活性化</h2>
-                <p>OKIRUは、わずか30秒のパズルゲームで脳を目覚めさせる革新的なアプリです。</p>
-                <a href="#" class="cta-button">今すぐダウンロード</a>
+                <h1>OKIRU</h1>
+                <p class="subtitle">30秒で脳を目覚めさせるアプリ</p>
+                <p>毎日のトレーニングで、素早い判断力と集中力を養いましょう。</p>
+            </div>
+            <img src="okiru-app-screenshot.jpg" alt="OKIRUアプリのスクリーンショット" class="app-screenshot">
+        </section>
+
+        <section id="features" class="features">
+            <h2>ゲームの特徴</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <img src="icon-brain.png" alt="脳のアイコン">
+                    <h3>脳を活性化</h3>
+                    <p>短時間で脳を刺激し、一日の始まりを効果的にサポート</p>
+                </div>
+                <div class="feature-item">
+                    <img src="icon-clock.png" alt="時計のアイコン">
+                    <h3>わずか30秒</h3>
+                    <p>忙しい朝にも無理なく続けられる短時間設計</p>
+                </div>
+                <div class="feature-item">
+                    <img src="icon-graph.png" alt="グラフのアイコン">
+                    <h3>成長を実感</h3>
+                    <p>日々のスコアを記録し、自分の上達度を確認できる</p>
+                </div>
             </div>
         </section>
 
-        <section class="features">
-            <h2>ゲームの特徴</h2>
-            <ul>
-                <li>色、形、文字を素早く識別</li>
-                <li>30秒の短時間で脳を活性化</li>
-                <li>日々のスコアを記録し、成長を実感</li>
-            </ul>
+        <section id="howto" class="howto">
+            <h2>遊び方</h2>
+            <div class="howto-steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <p>画面上部に表示されるアイテムを確認</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <p>下の9つのアイテムから、色・形・文字がすべて異なるものを選択</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <p>30秒間でできるだけ多くの問題を解く</p>
+                </div>
+            </div>
         </section>
 
-        <section class="contact">
+        <section id="contact" class="contact">
             <h2>お問い合わせ</h2>
             <form class="contact-form">
                 <div class="form-group">

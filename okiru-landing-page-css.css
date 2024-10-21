@@ -41,6 +41,8 @@ nav {
 nav ul {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -59,18 +61,16 @@ nav ul li a:hover {
 }
 
 main {
-    margin-top: 60px;
+    padding-top: 60px;
 }
 
 .hero {
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 5%;
+    padding: 4rem 5%;
     background: linear-gradient(135deg, #001F3F 0%, #0A4B78 100%);
     overflow: hidden;
-    position: relative;
 }
 
 .hero-content {
@@ -79,10 +79,6 @@ main {
 }
 
 .hero-image-container {
-    position: absolute;
-    top: 50%;
-    right: -5%;
-    transform: translateY(-50%);
     width: 50%;
     max-width: 600px;
 }
@@ -90,17 +86,20 @@ main {
 .hero-image {
     width: 100%;
     height: auto;
+    transform: perspective(1000px) rotateY(-15deg);
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: perspective(1000px) rotateY(0deg);
 }
 
 .hero-title {
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    font-size: 8rem;
+    font-size: 5rem;
     font-weight: 700;
     color: var(--accent-color);
+    margin: 0;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    z-index: 3;
 }
 
 h1 {
@@ -131,7 +130,7 @@ h2 {
 .about p, .privacy p {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 1rem;
     font-weight: 300;
 }
 
@@ -188,7 +187,6 @@ footer {
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
-        justify-content: center;
         text-align: center;
         padding: 4rem 5% 2rem;
     }
@@ -199,19 +197,11 @@ footer {
     }
 
     .hero-image-container {
-        position: relative;
-        top: auto;
-        right: auto;
-        transform: none;
         margin-top: 2rem;
     }
 
     .hero-title {
-        position: relative;
-        top: auto;
-        left: auto;
         font-size: 4rem;
-        margin-bottom: 1rem;
     }
 
     .feature-grid {
